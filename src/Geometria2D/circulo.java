@@ -26,12 +26,17 @@ public class circulo
         this.radio = radio;
     }
 
+    public double getRadio() {
+        return radio;
+    }
+
     public void setRadio(double radio) {
         this.radio = radio;
     }
 
-    private void setArea(double area) {
+    private double setArea(double area) {
         this.area = area;
+        return area;
     }
 
     private double setPerimetro(double perimetro) {
@@ -39,14 +44,14 @@ public class circulo
         return perimetro;
     }
 
-    public double calculoArea(double radio)
+    public void calculoArea(double radio)
     {
-        return setPerimetro(Math.PI * Math.pow(radio, 2));
+        setArea(Math.PI * Math.pow(radio, 2));
     }
 
-    public double calcularPerimetro(double radio)
+    public void calcularPerimetro(double radio)
     {
-        return 2 * Math.PI * radio;
+        setPerimetro(2 * Math.PI * radio);
     }
 
     public void Ver()
