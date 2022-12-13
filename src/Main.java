@@ -1,4 +1,5 @@
 import Geometria2D.*;
+import Geometria3D.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,5 +41,14 @@ public class Main {
         hexa.calcularPerimetro(hexa.getLado());
         hexa.calculoArea(hexa.getApotema());
         hexa.Ver();
+
+        System.out.println("----------------------------------------");
+        System.out.println("Cilindro");
+        cilindro cilin = new cilindro();
+        cilin.setAltura(15);
+        cilin.setRadio(12);
+        cilin.calcularArea();
+        cilin.calcularVolumen();
+        cilin.Ver();
     }
 }
