@@ -30,23 +30,25 @@ public class circulo
         this.radio = radio;
     }
 
-    private void setArea(double area) {
+    private double setArea(double area) {
         this.area = area;
+        return area;
     }
 
-    private double setPerimetro(double perimetro) {
-        this.perimetro = perimetro;
-        return perimetro;
-    }
+
 
     public double calculoArea(double radio)
     {
-        return setPerimetro(Math.PI * Math.pow(radio, 2));
+        return setArea(Math.PI * Math.pow(radio, 2));
     }
 
     public double calcularPerimetro(double radio)
     {
-        return 2 * Math.PI * radio;
+        return setPerimetro(2 * Math.PI * radio);
+    }
+    private double setPerimetro(double perimetro) {
+        this.perimetro = perimetro;
+        return perimetro;
     }
 
     public void Ver()
