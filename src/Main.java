@@ -1,4 +1,5 @@
 import Geometria2D.*;
+import Geometria3D.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,5 +9,69 @@ public class Main {
         das.calcularPerimetro(15.5);
         das.calculoArea(15.5);
         das.Ver();
+        System.out.println("==========================");
+        System.out.println("\tTRIANGULO\n");
+        triangulo tri = new triangulo();
+        tri.AreaTriangulo(5.5, 10.2);
+        tri.PerimetroTriangulo(15.2, 13.1, 5);
+        tri.MostrarTriangulo();
+        System.out.println("==========================");
+        System.out.println("\tTRAPEZOIDE\n");
+        trapezoide trap = new trapezoide();
+        trap.AreaTrapezoide(15.20, 30.8);
+        trap.PerimetroTrapezoide(5, 8.4, 10, 20.5);
+        trap.MostrarTrapezoide();
+        System.out.println("==========================");
+        System.out.println("\tTRAPECIO\n");
+        trapecio pecio = new trapecio();
+        pecio.AreaTrapecio(20.5, 10.5, 8);
+        pecio.PerimetroTrapecio(20.5, 10.5, 4, 6);
+        pecio.MostrarTrapecio();
+        System.out.println("==========================");
+        System.out.println("\tPENTAGONO\n");
+        pentagono penta = new pentagono();
+        penta.AreaPentagono(20, 4);
+        penta.PerimetroPentagono(5);
+        penta.MostrarPentagono();
+        System.out.println("==========================");
+        System.out.println("\tOCTAGONO\n");
+        octagono octa = new octagono();
+        octa.AreaOctagono(10, 3);
+        octa.PerimetroOctagono(10);
+        octa.MostrarOctagono();
+        System.out.println("==========================");
+        System.out.println("\t\tFIGURAS 3D\n");
+        System.out.println("\tTETRAEDRO\n");
+        tetraedro tetra = new tetraedro();
+        tetra.AreaTetraedro(8);
+        tetra.volumenTetraedro(8);
+        tetra.AlturaTetraedro(8);
+        tetra.MostrarTetraedro();
+        System.out.println("==========================");
+        System.out.println("\tPRISMA CUADRANGULAR REGULAR\n");
+        prisma pris = new prisma();
+        pris.AreaPrisma(8.35, 6.25);
+        pris.VolumenPrisma(6.25, 8);
+        pris.MostrarPrisma();
+        System.out.println("==========================");
+        System.out.println("\tPIRAMIDE CUADRANGULAR \n");
+        piramide pir = new piramide();
+        pir.AreaPiramide(15.8, 9.45);
+        pir.VolumenPiramide(15.8, 9.45);
+        pir.MostrarPrisma();
+        System.out.println("==========================");
+        System.out.println("\tOCTAEDRO REGULAR\n");
+        octaedro ocedro = new octaedro();
+        ocedro.AreaOctaedro(15.8);
+        ocedro.AlturaOctaedro(15.8);
+        ocedro.VolumenOctaedro(15.8);
+        ocedro.MostrarOctaedro();
+        System.out.println("==========================");
+        System.out.println("\tICOSAEDRO REGULAR\n");
+        icosaedro ico=new icosaedro();
+        ico.AreaIco(50.6);
+        ico.AreaCaraIco(11.98);
+        ico.VolumenIco(12.86);
+        ico.MostrarIcosaedro();
     }
 }
