@@ -5,6 +5,14 @@ public class circulo
     private double area;
     public double radio;
     private double perimetro;
+
+    public circulo()
+    {
+        area = 0;
+        perimetro = 0;
+        radio = 0;
+    }
+
     private double getArea() {
         return area;
     }
@@ -18,10 +26,6 @@ public class circulo
         this.radio = radio;
     }
 
-    public double getRadio() {
-        return radio;
-    }
-
     public void setRadio(double radio) {
         this.radio = radio;
     }
@@ -31,19 +35,20 @@ public class circulo
         return area;
     }
 
+
+
+    public double calculoArea(double radio)
+    {
+        return setArea(Math.PI * Math.pow(radio, 2));
+    }
+
+    public double calcularPerimetro(double radio)
+    {
+        return setPerimetro(2 * Math.PI * radio);
+    }
     private double setPerimetro(double perimetro) {
         this.perimetro = perimetro;
         return perimetro;
-    }
-
-    public void calculoArea(double radio)
-    {
-        setArea(Math.PI * Math.pow(radio, 2));
-    }
-
-    public void calcularPerimetro(double radio)
-    {
-        setPerimetro(2 * Math.PI * radio);
     }
 
     public void Ver()
