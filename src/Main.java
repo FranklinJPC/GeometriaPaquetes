@@ -1,14 +1,49 @@
 import Geometria2D.*;
 import Geometria3D.*;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        System.out.println("\tFIGURAS GEOMTRICAS");
+        System.out.println("==========================");
+        System.out.println("\tCirculo\n");
         circulo das = new circulo();
         das.circulo(15.5);
         das.calcularPerimetro(15.5);
         das.calculoArea(15.5);
         das.Ver();
+        System.out.println("==========================");
+        System.out.println("\tCuadrado\n");
+        cuadrado cuad = new cuadrado();
+        cuad.setLado(14);
+        cuad.calcularPerimetro(cuad.getLado());
+        cuad.calculoArea(cuad.getLado());
+        cuad.Ver();
+        System.out.println("==========================");
+        System.out.println("\tEneagono\n");
+        eneagono ene = new eneagono();
+        ene.setLado(5.23);
+        ene.setApotema(3);
+        ene.calcularPerimetro(ene.getLado());
+        ene.calculoArea(ene.getApotema());
+        ene.Ver();
+        System.out.println("==========================");
+        System.out.println("\tHeptagono\n");
+        Heptagono hepta = new Heptagono();
+        hepta.setLado(5);
+        hepta.setApotema(12);
+        hepta.calcularPerimetro(hepta.getLado());
+        hepta.calculoArea(ene.getApotema());
+        hepta.Ver();
+        System.out.println("==========================");
+        System.out.println("\tHexagono\n");
+        hexagono hexa = new hexagono();
+        hexa.setLado(1.25);
+        hexa.setApotema(3.56);
+        hexa.calcularPerimetro(hexa.getLado());
+        hexa.calculoArea(hexa.getApotema());
+        hexa.Ver();
         System.out.println("==========================");
         System.out.println("\tTRIANGULO\n");
         triangulo tri = new triangulo();
@@ -39,8 +74,10 @@ public class Main {
         octa.AreaOctagono(10, 3);
         octa.PerimetroOctagono(10);
         octa.MostrarOctagono();
+
         System.out.println("==========================");
         System.out.println("\t\tFIGURAS 3D\n");
+        System.out.println("==========================");
         System.out.println("\tTETRAEDRO\n");
         tetraedro tetra = new tetraedro();
         tetra.AreaTetraedro(8);
@@ -73,5 +110,53 @@ public class Main {
         ico.AreaCaraIco(11.98);
         ico.VolumenIco(12.86);
         ico.MostrarIcosaedro();
+
+        System.out.println("==========================");
+        System.out.println("\tCilindro\n");
+        cilindro cilin = new cilindro();
+        cilin.setAltura(15);
+        cilin.setRadio(12);
+        cilin.calcularArea();
+        cilin.calcularVolumen();
+        cilin.Ver();
+        System.out.println("==========================");
+
+        System.out.println("\tCono\n");
+        cono con = new cono();
+        con.setApertura(25);
+        con.setAltura(15);
+        con.setRadio(23);
+        con.calcularArea();
+        con.calcularVolumen();
+        con.Ver();
+        System.out.println("==========================");
+
+        System.out.println("\tCubo\t");
+        cubo cub = new cubo();
+        cub.setLado(5);
+        cub.calcularArea();
+        cub.calcularVolumen();
+        cub.Ver();
+        System.out.println("==========================");
+
+        System.out.println("\tEsfera\n");
+        esfera esf = new esfera();
+        esf.setRadio(4.25);
+        esf.calcularArea();
+        esf.calcularVolumen();
+        esf.Ver();
+        System.out.println("==========================");
+
+        System.out.println("\tPrisma triangular\n");
+        prisma_triangular pristia = new prisma_triangular();
+        pristia.setBase(5);
+        pristia.setAltura(11.3);
+        pristia.setLado(6);
+        pristia.calcularArea();
+        pristia.calcularVolumen();
+        pristia.Ver();
+        System.out.println("==========================");
+
+
     }
 }

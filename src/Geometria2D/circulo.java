@@ -6,13 +6,6 @@ public class circulo
     public double radio;
     private double perimetro;
 
-    public circulo()
-    {
-        area = 0;
-        perimetro = 0;
-        radio = 0;
-    }
-
     private double getArea() {
         return area;
     }
