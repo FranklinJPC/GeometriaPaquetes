@@ -1,10 +1,28 @@
 package Geometria3D;
 
-public class cubo
+public class prisma_triangular
 {
+    public double altura;
+    public double base;
     public double lado;
     private double volumen;
     private double area;
+
+    private double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    private double getBase() {
+        return base;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
 
     private double getLado() {
         return lado;
@@ -32,11 +50,11 @@ public class cubo
 
     public void calcularArea()
     {
-        setArea(6 * Math.pow(getLado(), 2));
+        setArea(((getBase() * getLado() * getAltura()) / 2));
     }
     public void calcularVolumen()
     {
-        setVolumen(Math.pow(getLado(), 3));
+        setVolumen(((getBase() * getAltura()) / 2) * getAltura());
     }
     public void Ver()
     {
