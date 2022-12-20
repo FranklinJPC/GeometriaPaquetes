@@ -1,9 +1,42 @@
 package Geometria3D;
+import FiguraGeneral.*;
 
-public class tetraedro {
-    private    double areatetraedro,volumentetraedro,alturatetraedro,ladotetraedro;
+public class tetraedro extends FiguraBase
+{
+    private double areatetraedro,volumentetraedro,alturatetraedro,ladotetraedro;
+
+    public tetraedro(double alturatetraedro, double ladotetraedro)
+    {
+        this.alturatetraedro = alturatetraedro;
+        this.ladotetraedro = ladotetraedro;
+        calcularArea();
+        calcularVolumen();
+    }
+
+    public double getArea() {
+        return areatetraedro;
+    }
 
 
+    public double getVolumen() {
+        return volumentetraedro;
+    }
+
+    @Override
+    protected void calcularArea() {
+        areatetraedro = Math.pow(ladotetraedro,2)*(Math.sqrt(3));
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+
+    }
+
+    @Override
+    protected void calcularVolumen() {
+        volumentetraedro = (Math.pow(ladotetraedro,3)*(Math.sqrt(2)/12));
+    }
+    /*
     public double getAreatetraedro() {
         return areatetraedro;
     }
@@ -53,6 +86,8 @@ public class tetraedro {
         System.out.println("Volumen: "+getVolumentetraedro() );
         System.out.println("Altura: "+getAlturatetraedro() );
     }
+
+     */
 
 
 }

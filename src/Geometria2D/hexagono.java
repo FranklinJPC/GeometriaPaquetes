@@ -1,11 +1,44 @@
 package Geometria2D;
+import FiguraGeneral.*;
 
-public class hexagono
+public class hexagono extends FiguraBase
 {
     private double area;
     public double lado;
     public double apotema;
     private double perimetro;
+
+    public hexagono(double lado, double apotema)
+    {
+        this.lado = lado;
+        this.apotema = apotema;
+        calcularArea();
+        calcularPerimetro();
+    }
+    public double getArea() {
+        return area;
+    }
+
+    public double getPerimetro() {
+        return perimetro;
+    }
+
+    @Override
+    protected void calcularArea() {
+        area = (perimetro * apotema) / 2;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+        perimetro = lado * 6;
+    }
+
+    @Override
+    protected void calcularVolumen() {
+
+    }
+
+    /*
 
     public void setLado(double lado) {
         this.lado = lado;
@@ -56,4 +89,5 @@ public class hexagono
         System.out.println("Area: " + getArea());
         System.out.println("Perimerto: " + getPerimetro());
     }
+     */
 }

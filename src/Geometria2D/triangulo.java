@@ -1,6 +1,8 @@
 package Geometria2D;
+import FiguraGeneral.*;
 
-public class triangulo {
+public class triangulo extends FiguraBase
+{
     private double base
             ,altura,
             area,
@@ -9,16 +11,39 @@ public class triangulo {
             ladom;
 
 
-    public triangulo()
+    public triangulo(double ladom, double ladoM, double base, double altura)
     {
-        area = 0;
-        perimetro = 0;
-        base=0;
-        altura=0;
-        ladom=0;
-        ladoM=0;
+        this.ladom = ladom;
+        this.ladoM = ladoM;
+        this.altura = altura;
+        this.base = base;
+        calcularArea();
+        calcularPerimetro();
+    }
+    public double getArea() {
+        return area;
     }
 
+    public double getPerimetro() {
+        return perimetro;
+    }
+
+    @Override
+    protected void calcularArea() {
+        area = (base * altura) / 2;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+        perimetro = ladom + ladoM + base;
+    }
+
+    @Override
+    protected void calcularVolumen() {
+
+    }
+
+    /*
     public double getArea() {
         return area;
     }
@@ -66,4 +91,5 @@ public class triangulo {
         System.out.println("Area: " + getArea());
         System.out.println("Perimerto: " + getPerimetro());
     }
+     */
 }

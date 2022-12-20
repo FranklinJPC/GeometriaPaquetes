@@ -1,6 +1,7 @@
 package Geometria3D;
+import FiguraGeneral.*;
 
-public class cono
+public class cono extends FiguraBase
 {
     public double radio;
     public double altura;
@@ -8,6 +9,38 @@ public class cono
     private double volumen;
     private double area;
 
+    public double getArea() {
+        return area;
+    }
+
+    public cono(double radio, double altura, double apertura)
+    {
+        this.altura = altura;
+        this.radio = radio;
+        this.apertura = apertura;
+        calcularArea();
+        calcularVolumen();
+    }
+    public double getVolumen() {
+        return volumen;
+    }
+
+    @Override
+    protected void calcularArea() {
+        area = (Math.PI * radio)*(radio) + apertura;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+
+    }
+
+    @Override
+    protected void calcularVolumen() {
+        volumen = (Math.PI * altura * Math.pow(radio, 2)) / 3;
+    }
+
+    /*
     public void setRadio(double radio) {
         this.radio = radio;
     }
@@ -61,4 +94,5 @@ public class cono
         System.out.println("Area: " + getArea());
         System.out.println("Volumen: " + getVolumen());
     }
+     */
 }

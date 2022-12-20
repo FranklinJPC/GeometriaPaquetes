@@ -1,16 +1,40 @@
 package Geometria2D;
+import FiguraGeneral.*;
 
-public class pentagono {
+public class pentagono extends FiguraBase
+{
     private double lado,perimetroPetagono,areaPentagono,apotemaPentagono;
-    public  pentagono(){
+    public  pentagono(double lado, double apotemaPentagono){
+        this.lado = lado;
+        this.apotemaPentagono = apotemaPentagono;
+        calcularPerimetro();
+        calcularArea();
+    }
+    public double getArea() {
+        return areaPentagono;
+    }
 
-        lado=0;
-        perimetroPetagono=0;
-        areaPentagono=0;
-        apotemaPentagono=0;
+    public double getPerimetro() {
+        return perimetroPetagono;
+    }
+
+    @Override
+    protected void calcularArea() {
+        areaPentagono = (perimetroPetagono * apotemaPentagono) / 2;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+        perimetroPetagono = lado * 5;
+    }
+
+    @Override
+    protected void calcularVolumen() {
 
     }
 
+
+    /*
     public double getPerimetroPetagono() {
         return perimetroPetagono;
     }
@@ -50,4 +74,5 @@ public class pentagono {
         System.out.println("Area: "+getAreaPentagono()  );
         System.out.println("Perimerto: "+getPerimetroPetagono() );
     }
+     */
 }

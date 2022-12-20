@@ -1,12 +1,46 @@
 package Geometria3D;
+import FiguraGeneral.*;
 
-public class prisma_triangular
+public class prisma_triangular extends FiguraBase
 {
     public double altura;
     public double base;
     public double lado;
     private double volumen;
     private double area;
+
+    public prisma_triangular(double altura, double base, double lado)
+    {
+        this.lado= lado;
+        this.altura = altura;
+        this.base = base;
+        calcularArea();
+        calcularVolumen();
+    }
+
+    public double getVolumen() {
+        return volumen;
+    }
+
+    public double getArea() {
+        return area;
+    }
+    @Override
+    protected void calcularArea() {
+        area = ((base * lado * altura) / 2);
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+
+    }
+
+    @Override
+    protected void calcularVolumen() {
+        volumen = ((base * altura) / 2) * altura;
+    }
+
+    /*
 
     private double getAltura() {
         return altura;
@@ -61,4 +95,6 @@ public class prisma_triangular
         System.out.println("Area: " + getArea());
         System.out.println("Volumen: " + getVolumen());
     }
+
+     */
 }

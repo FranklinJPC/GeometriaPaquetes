@@ -1,7 +1,43 @@
 package Geometria3D;
+import FiguraGeneral.*;
 
-public class prisma {
-private double areaLateral,areaBase,altura,AreaPrisma,VolumenPrisma;
+public class prisma extends FiguraBase
+{
+    private double areaLateral,areaBase,altura,AreaPrisma,VolumenPrisma;
+
+    public prisma(double altura, double areaBase, double areaLateral)
+    {
+        this.altura = altura;
+        this.areaLateral = areaLateral;
+        this.areaBase = areaBase;
+        calcularArea();
+        calcularVolumen();
+    }
+
+    public double getArea() {
+        return AreaPrisma;
+    }
+
+    public double getVolumen() {
+        return VolumenPrisma;
+    }
+
+    @Override
+    protected void calcularArea() {
+        AreaPrisma = areaLateral+2*(areaBase);
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+
+    }
+
+    @Override
+    protected void calcularVolumen() {
+        VolumenPrisma = areaBase*altura;
+    }
+
+    /*
 
     public double getAreaPrisma() {
         return AreaPrisma;
@@ -46,5 +82,6 @@ private double areaLateral,areaBase,altura,AreaPrisma,VolumenPrisma;
         System.out.println("Volumen: "+getVolumenPrisma() );
 
     }
+ */
 
 }

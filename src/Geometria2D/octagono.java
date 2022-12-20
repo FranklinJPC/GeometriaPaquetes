@@ -1,18 +1,42 @@
 package Geometria2D;
+import FiguraGeneral.*;
 
-public class octagono {
+public class octagono extends FiguraBase
+{
     private double areaOcta,perimetroOcta,ladoOcta,apotemaOcta;
-    public octagono (){
+    public octagono (double ladoOcta, double apotemaOcta)
+    {
+        this.ladoOcta = ladoOcta;
+        this.apotemaOcta = apotemaOcta;
+        calcularArea();
+        calcularPerimetro();
+    }
+    public double getArea() {
+        return areaOcta;
+    }
 
-        areaOcta=0;
-        perimetroOcta=0;
-        ladoOcta=0;
-        apotemaOcta=0;
+    public double getPerimetro() {
+        return perimetroOcta;
+    }
 
+    @Override
+    protected void calcularArea() {
+        areaOcta = (perimetroOcta * apotemaOcta) / 2;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+        perimetroOcta = ladoOcta * 8;
+    }
+
+    @Override
+    protected void calcularVolumen() {
 
     }
 
 
+
+    /*
     public double getAreaOcta() {
         return areaOcta;
     }
@@ -53,6 +77,6 @@ public class octagono {
         System.out.println("Area: "+getAreaOcta()  );
         System.out.println("Perimerto: "+getPerimetroOcta() );
     }
-
+     */
 
 }

@@ -1,7 +1,42 @@
 package Geometria3D;
+import FiguraGeneral.*;
 
-public class octaedro {
+public class octaedro extends FiguraBase
+{
     private double areaoctaedro,volumenoctaedro,alturaoctaedro,ladooctaedro;
+
+    public octaedro(double alturaoctaedro, double ladooctaedro)
+    {
+        this.alturaoctaedro = alturaoctaedro;
+        this.ladooctaedro = ladooctaedro;
+        calcularArea();
+        calcularVolumen();
+    }
+
+    public double getArea() {
+        return areaoctaedro;
+    }
+
+    public double getVolumen() {
+        return volumenoctaedro;
+    }
+
+    @Override
+    protected void calcularArea() {
+        areaoctaedro = Math.pow(ladooctaedro,2)*(Math.sqrt(3)*2);
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+
+    }
+
+    @Override
+    protected void calcularVolumen() {
+        volumenoctaedro = Math.pow(ladooctaedro,3)*(Math.sqrt(2)/3);
+    }
+
+    /*
 
     private double getAreaoctaedro() {
         return areaoctaedro;
@@ -50,5 +85,6 @@ public class octaedro {
         System.out.println("Volumen: "+getVolumenoctaedro() );
         System.out.println("Altura: "+getAlturaoctaedro() );
     }
+     */
 
 }

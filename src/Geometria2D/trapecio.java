@@ -1,17 +1,43 @@
 package Geometria2D;
+import FiguraGeneral.*;
 
-public class trapecio {
+public class trapecio extends FiguraBase
+{
     private double bmayor,bmenor,altura,l1,l2,perimetroTrapecio,areaTrapecio;
-    public trapecio()
+    public trapecio(double altura, double l1, double l2, double bmayor, double bmenor)
     {
-        bmayor = 0;
-        bmenor = 0;
-        altura=0;
-        l1=0;
-        l2=0;
+        this.altura = altura;
+        this.l1 = l1;
+        this.l2 = l2;
+        this.bmayor = bmayor;
+        this.bmenor = bmenor;
+        calcularPerimetro();
+        calcularArea();
+    }
+    public double getArea() {
+        return areaTrapecio;
+    }
+
+    public double getPerimetro() {
+        return perimetroTrapecio;
+    }
+
+    @Override
+    protected void calcularArea() {
+        areaTrapecio = (bmayor+bmenor*altura) / 2;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+        perimetroTrapecio = l1 + l2 + bmayor + bmenor;
+    }
+
+    @Override
+    protected void calcularVolumen() {
 
     }
 
+    /*
     public void setBmayor(double bmayor) {
         this.bmayor = bmayor;
     }
@@ -54,4 +80,5 @@ public class trapecio {
         System.out.println("Area: " + getAreaTrapecio());
         System.out.println("Perimerto: " + getPerimetroTrapecio());
     }
+     */
 }

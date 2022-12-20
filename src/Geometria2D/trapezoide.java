@@ -1,19 +1,47 @@
 package Geometria2D;
+import FiguraGeneral.*;
 
-public class trapezoide {
+public class trapezoide extends FiguraBase
+{
     private double a1,a2,altura,l1,l2,l3,l4,perimetroTrapezoide,areaTrapezoide;
 
 
-    public trapezoide()
+    public trapezoide(double a1, double a2, double l1, double l2, double l3, double l4, double altura)
     {
-        a1 = 0;
-        a2 = 0;
-        altura=0;
-        l1=0;
-        l2=0;
-        l3=0;
-        l4=0;
+        this.a1 = a1;
+        this.a2 = a2;
+        this.altura = altura;
+        this.l1 = l1;
+        this.l2 = l2;
+        this.l3 = l3;
+        this.l4 = l4;
+        calcularPerimetro();
+        calcularArea();
     }
+    public double getArea() {
+        return areaTrapezoide;
+    }
+
+    public double getPerimetro() {
+        return perimetroTrapezoide;
+    }
+
+    @Override
+    protected void calcularArea() {
+        areaTrapezoide = ((a1 + a2) / 2) * altura;
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+        perimetroTrapezoide = l1 + l2 + l3 + l4;
+    }
+
+    @Override
+    protected void calcularVolumen() {
+
+    }
+
+    /*
     public void setAltura(double altura) {
         this.altura = altura;
     }
@@ -56,4 +84,5 @@ public class trapezoide {
         System.out.println("Area: " + getAreaTrapezoide());
         System.out.println("Perimerto: " + getPerimetroTrapezoide());
     }
+     */
 }

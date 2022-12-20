@@ -1,8 +1,43 @@
 package Geometria3D;
 
-public class piramide {
+import FiguraGeneral.FiguraBase;
+
+public class piramide extends FiguraBase
+{
     private double ladoPiramide,alturaPiramide,volumenPiramide,areaPiramide;
 
+    public piramide(double ladoPiramide, double alturaPiramide)
+    {
+        this.alturaPiramide = alturaPiramide;
+        this.ladoPiramide = ladoPiramide;
+        calcularArea();
+        calcularVolumen();
+    }
+
+    public double getVolumen() {
+        return volumenPiramide;
+    }
+
+    public double getArea() {
+        return areaPiramide;
+    }
+
+    @Override
+    protected void calcularArea() {
+        areaPiramide = ladoPiramide*(ladoPiramide+(Math.sqrt(4*Math.pow(alturaPiramide,2)+(Math.pow(ladoPiramide,2)))));
+    }
+
+    @Override
+    protected void calcularPerimetro() {
+
+    }
+
+    @Override
+    protected void calcularVolumen() {
+        volumenPiramide = (Math.pow(ladoPiramide,2)*alturaPiramide)/3;
+    }
+
+    /*
     public double getVolumenPiramide() {
         return volumenPiramide;
     }
@@ -41,4 +76,5 @@ public class piramide {
         System.out.println("Volumen: "+getVolumenPiramide() );
 
     }
+     */
 }
